@@ -101,7 +101,8 @@ public class DepartamentService:IDepartementService
         {
             string cmd = @"SELECT * FROM Departaments";
             Console.WriteLine("||||||||||||  Departaments!  ||||||||||||||");
-            return context.GetConnection().Query<Departament>(cmd).ToList();
+            List<Departament> departaments = context.GetConnection().Query<Departament>(cmd).ToList();
+            return departaments;
         }
         catch (NpgsqlException e)
         {

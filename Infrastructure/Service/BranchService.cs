@@ -66,6 +66,7 @@ public class BranchService:IBranchService
     {
         string cmd = @"SELECT * FROM branches";
         Console.WriteLine("|||||||||||||||||||| Branches ||||||||||||||||");
-        return context.GetConnection().Query<Branch>(cmd).ToList();
+        List<Branch> branches = context.GetConnection().Query<Branch>(cmd).ToList();
+        return branches;
     }
 }
